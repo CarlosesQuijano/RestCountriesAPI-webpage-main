@@ -1,0 +1,33 @@
+.form-control-borderless {
+     border: none;
+    width: 400px; 
+}
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+} 
+.card-body{
+    width: 550px;
+    height: 65px
+}
+.card{
+    width: 500px;
+    height: 70px;
+}
+.buscador{
+    padding-top: 20px;
+    padding-left: 30px;
+   
+}
+.navbar{
+    height: 90px;   
+}
+.dropdown{
+   padding-right: 25px;
+}
+.img2{
+        aspect-ratio: 3/2;
+        justify-content: center;
+        padding-left:20px;
+}
