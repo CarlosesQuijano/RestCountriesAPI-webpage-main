@@ -24,3 +24,21 @@ datos.forEach(element => {
     products.appendChild(card);
 })
 
+const searchProduct = dom.$('#search');
+
+searchProduct.addEventListener('keyup', () => {
+  let filtro = searchProduct.value;
+
+  const filtered = filtro === '' ? datos : data.filterByCountry(datos, filtro); 
+
+  dom.showCards(filtered);
+})
+
+
+
+const regiones = data.filterByRegion(datos);
+
+dom.regions(regiones);
+
+const catList  = [...dom.$('#regiones').children];
+let catActive = 0;

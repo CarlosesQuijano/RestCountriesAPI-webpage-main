@@ -12,10 +12,38 @@
  
   }
   
+  const filtrar = (arr, filtro) => {
+  
+    let filtered = arr.filter( elem => elem.name.common === filtro)
+    
+      return filtered;
+    };
+    
+    const filterByCountry = (arr, filtro) => {
+      
+      let filtered = arr.filter( elem => {
+        return elem.name.common.toLowerCase().includes(filtro.toLowerCase()) || elem.name.common.toLowerCase().includes(filtro.toLowerCase())
+        
+      })
+    
+      return filtered;
+    }
 
-export default{
-getData,
 
-}
+    const filterByRegion= (data) => {
+      let regiones = data.map (elem => elem.region);
+      regiones = new Set (regiones);
+
+      regiones =  ['All', ...regiones];
+      return regiones
+    };
+
+    export default{
+    getData,
+    filtrar, 
+    filterByCountry,
+    filterByRegion,
+
+    }
 
 

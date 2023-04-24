@@ -1,8 +1,9 @@
 const $ = (selector) => document.querySelector(selector);
 
+const newE = tag => document.createElement(tag);
 
 const newCard = (obj) => {
-  const div = document.createElement('div');
+  const div = newE('div');
   div.className = 'cards';
   
 
@@ -29,20 +30,37 @@ const newCard = (obj) => {
 }
 const showCards = (arr) => {
 
-  products.innerHTML = '';
+  paises.innerHTML = '';
 
   arr.forEach( element => {
     // Creamos el card con la informacion del elemento
     const card = newCard(element);
   
     // Agregamos el card al elemento products
-    products.appendChild(card);
+    paises.appendChild(card);
   })
 }
+const regions = (regions) => {
 
+  // selecciono el elemento padre
+  const list = $('#regiones');
+
+  regions.forEach( elem => {
+    const li = newE('li');
+    li.className = `text-nowrap pointer py-1 px-3 border border-2 rounded-3 c-vl-pink ${elem === 'All' ? 'act-categorie' : '' }`; //condiciono la clase act-categorie solo para el elemento 'All'
+
+    li.innerHTML = elem;
+
+    list.appendChild(li);
+  })
+
+}
 
 export default {
    $,
   showCards,
  newCard,
+ regions
 }
+
+
