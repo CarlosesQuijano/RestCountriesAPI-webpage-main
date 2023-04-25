@@ -33,12 +33,12 @@ datos.forEach(element => {
 })
 
 
-const canva = dom.$("#nuevo");
-datos.forEach(element => {
-    const card = dom.newCard2(element);
-    canva.appendChild(card);
+// const canva = dom.$("#nuevo");
+// datos.forEach(element => {
+//     const card = dom.newCard2(element);
+//     canva.appendChild(card);
    
-});
+// });
 
 const searchProduct = dom.$('#search');
 
@@ -60,7 +60,20 @@ searchProduct.addEventListener('keyup', () => {
     })
 })
 
+
+
 })
+
+// const mundo = dom.$("paises");
+
+// mundo.addEventListener("click", () => {
+   
+
+// })
+
+// mundo.setAttribute("data-pais", name.common);
+
+
 
     const offcanvas= [...dom.$('#paises').children];
     offcanvas.forEach(elem => {

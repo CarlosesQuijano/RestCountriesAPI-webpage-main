@@ -7,12 +7,12 @@ const newCard = (obj) => {
   div.className = 'cards';
   
   div.innerHTML = `
-  <div class="cards" "btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+  <div class="cards" >
       <div class="img2">
           <img class="rounded-2" src="${obj.flags.png}" alt="">
        </div>
           <div class="card-body">
-    <h5 class="card-title">${obj.name.common}</h5>
+    <h5 class="card-title" "btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" >${obj.name.common}</h5>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Population: ${obj.population}</li>
@@ -33,12 +33,8 @@ const newCard2 = (obj) => {
   div.className = 'contenedor-pricipal';
   
   div.innerHTML = `
-  
-            <div class="banderita">
               <img src="${obj.flags.png}" alt="">
-            </div>
-            <div class="caja1">
-              <li class="list-group-item">Pais principal: ${obj.name.common}</li>
+              <li class="list-group-item"><b>Pais principal:</b> ${obj.name.common}</li>
               <li class="list-group-item">Native Name: </li>
               <li class="list-group-item">Population: ${obj.population} </li>
               <li class="list-group-item">Region: ${obj.region} </li>
@@ -46,9 +42,8 @@ const newCard2 = (obj) => {
               <li class="list-group-item">Capital: ${obj.capital} </li>
               <div class="caja2">
               <li class="list-group-item">Top Level Domain: ${obj.tld}</li>
-              <li class="list-group-item">Currencies: </li>
-              <li class="list-group-item">Languages: </li>
-            </div>
+              <li class="list-group-item">Currencies:Euro</li>
+              <li class="list-group-item">Languages:Eng</li>
             </div>
            </div>
   `
