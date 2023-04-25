@@ -31,3 +31,38 @@
         justify-content: center;
         padding-left:20px;
 }
+.bottonmodal{
+    background-color: black;
+    width: 200px;
+    display: flex;
+}
+.boton2{
+    width: 200px;
+}
+
+.contenedor-principal{
+    width:1400px;
+    height:600px ;
+   
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 70px;
+    
+}
+.banderita{
+    width: 400px;
+    height: 400px;
+    
+}
+
+.caja1{
+   
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    align-items: center;
+}
+
+
+

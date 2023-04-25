@@ -6,11 +6,10 @@ const newCard = (obj) => {
   const div = newE('div');
   div.className = 'cards';
   
-
   div.innerHTML = `
-  <div class="cards">
-      <div class="img2">
-          <img class=" rounded-2" src="${obj.flags.png}" alt="">
+  <div class="cards" "btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+      <div class="img2" >
+          <img class="rounded-2" src="${obj.flags.png}" alt="">
        </div>
           <div class="card-body">
     <h5 class="card-title">${obj.name.common}</h5>
@@ -28,6 +27,35 @@ const newCard = (obj) => {
   `
   return div
 }
+
+const newCard2 = (obj) => {
+  const div = newE('div');
+  div.className = 'contenedor-pricipal';
+  
+  div.innerHTML = `
+  
+            <div class="banderita">
+              <img src="${obj.flags.png}" alt="">
+            </div>
+            <div class="caja1">
+              <li class="list-group-item">Pais principal: ${obj.name.common}</li>
+              <li class="list-group-item">Native Name: </li>
+              <li class="list-group-item">Population: ${obj.population} </li>
+              <li class="list-group-item">Region: ${obj.region} </li>
+              <li class="list-group-item">Sub Region: ${obj.subregion} </li>
+              <li class="list-group-item">Capital: ${obj.capital} </li>
+              <div class="caja2">
+              <li class="list-group-item">Top Level Domain: ${obj.tld}</li>
+              <li class="list-group-item">Currencies: </li>
+              <li class="list-group-item">Languages: </li>
+            </div>
+            </div>
+           </div>
+  `
+  return div
+}
+
+
 const showCards = (arr) => {
 
   paises.innerHTML = '';
@@ -40,14 +68,24 @@ const showCards = (arr) => {
     paises.appendChild(card);
   })
 }
-const regions = (regions) => {
+const showCards2 = (arr) => {
 
-  // selecciono el elemento padre
+  nuevo.innerHTML = '';
+
+  arr.forEach( element => {
+    // Creamos el card con la informacion del elemento
+    const card = newCard2(element);
+  
+    // Agregamos el card al elemento products
+    nuevo.appendChild(card);
+  })
+}
+const regions = (regions) => {
   const list = $('#regiones');
 
   regions.forEach( elem => {
     const li = newE('li');
-    li.className = `text-nowrap pointer py-1 px-3 border border-2 rounded-3 c-vl-pink ${elem === 'All' ? 'act-categorie' : '' }`; //condiciono la clase act-categorie solo para el elemento 'All'
+    li.className = `text-nowrap pointer py-1 px-3 rounded-3 c-vl-pink ${elem === 'All' ? 'act-categorie' : '' }`; //condiciono la clase act-categorie solo para el elemento 'All'
 
     li.innerHTML = elem;
 
@@ -60,7 +98,9 @@ export default {
    $,
   showCards,
  newCard,
- regions
+ regions,
+ newCard2,
+ showCards2,
 }
 
 

@@ -10,10 +10,18 @@ const datos = await data.getData(URL);
 
 const darkBtn = document.querySelector("#switch");
 
+
 darkBtn.addEventListener("click", () => {
     html.dataset.bsTheme = html.dataset.bsTheme === "light" ? "dark" : "light";
 })
 
+const darkBtn2 = document.querySelector("#switch2");
+
+
+darkBtn2.addEventListener("click", () => {
+    html.dataset.bsTheme = html.dataset.bsTheme === "light" ? "dark" : "light";
+
+})
 
 
 const products = dom.$('#paises');
@@ -23,6 +31,13 @@ datos.forEach(element => {
 
     products.appendChild(card);
 })
+
+
+const canva = dom.$("#nuevo");
+datos.forEach(element => {
+    const card = dom.newCard2(element);
+    canva.appendChild(card);
+});
 
 const searchProduct = dom.$('#search');
 
@@ -42,3 +57,24 @@ dom.regions(regiones);
 
 const catList  = [...dom.$('#regiones').children];
 let catActive = 0;
+
+
+catList.forEach((busqueda, index) => {
+    busqueda.addEventListener('click', () => {
+        if (busqueda.classList.contains('act-categorie')) return ;
+
+        busqueda.classList.add('act-categorie');
+        let old = catList[catActive];
+
+        old.classList.remove('act-categorie');
+
+        catActive = index;
+
+        let filtro = busqueda.textContent;
+
+        const filtered = filtro === "All" ? datos : data.filtrar(datos, filtro);
+
+        dom.showCards(filtered);
+       
+    })
+});

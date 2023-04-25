@@ -11,10 +11,12 @@
     
  
   }
+
+
   
   const filtrar = (arr, filtro) => {
   
-    let filtered = arr.filter( elem => elem.name.common === filtro)
+    let filtered = arr.filter( elem => elem.region === filtro)
     
       return filtered;
     };
@@ -36,7 +38,11 @@
 
       regiones =  ['All', ...regiones];
       return regiones
+
+
+      
     };
+  
 
     export default{
     getData,
