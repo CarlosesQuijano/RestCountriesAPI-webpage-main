@@ -37,6 +37,7 @@ const canva = dom.$("#nuevo");
 datos.forEach(element => {
     const card = dom.newCard2(element);
     canva.appendChild(card);
+   
 });
 
 const searchProduct = dom.$('#search');
@@ -47,7 +48,32 @@ searchProduct.addEventListener('keyup', () => {
   const filtered = filtro === '' ? datos : data.filterByCountry(datos, filtro); 
 
   dom.showCards(filtered);
+
+  const offcanvas= [...dom.$('#paises').children];
+    offcanvas.forEach(elem => {
+    elem.addEventListener ('click', () => {
+        
+        let filtro = ''
+        filtro = event.target.textContent;
+        const filteredcanvas = filtro == "" ? filtered  : data.showCanvas(filtered, filtro)
+        dom.showCards2(filteredcanvas); 
+    })
 })
+
+})
+
+    const offcanvas= [...dom.$('#paises').children];
+    offcanvas.forEach(elem => {
+    elem.addEventListener ('click', () => {
+        
+        let filtro = ''
+        filtro = event.target.textContent;
+        const filtered = filtro == "" ? datos  : data.showCanvas(datos, filtro)
+
+        dom.showCards2(filtered); 
+    })
+})
+
 
 
 
@@ -75,6 +101,22 @@ catList.forEach((busqueda, index) => {
         const filtered = filtro === "All" ? datos : data.filtrar(datos, filtro);
 
         dom.showCards(filtered);
+
+
+
+        const offcanvas= [...dom.$('#paises').children];
+        offcanvas.forEach(elem => {
+         elem.addEventListener ('click', () => {
+        
+
+        let filtro = ''
+        filtro = event.target.textContent;
+        const filteredcanvas = filtro == "" ? filtered  : data.showCanvas(filtered, filtro)
+
+        dom.showCards2(filteredcanvas); 
+    })
+})
+
        
     })
 });

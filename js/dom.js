@@ -8,7 +8,7 @@ const newCard = (obj) => {
   
   div.innerHTML = `
   <div class="cards" "btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-      <div class="img2" >
+      <div class="img2">
           <img class="rounded-2" src="${obj.flags.png}" alt="">
        </div>
           <div class="card-body">

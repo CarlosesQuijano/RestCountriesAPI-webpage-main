@@ -42,6 +42,11 @@
 
       
     };
+
+    const showCanvas = (arr, filtro) =>{
+      let canvas = arr.filter(elem => elem.name.common == filtro)
+      return canvas
+    }
   
 
     export default{
@@ -49,6 +54,7 @@
     filtrar, 
     filterByCountry,
     filterByRegion,
+    showCanvas,
 
     }
 
